@@ -34,15 +34,6 @@ passport.deserializeUser(async (email, done) => {
   done(null, user)
 })
 
-/* //Logueo y seteo cookie con logueo exitoso
-function logInUsuario() {
-  passport.authenticate('login', {
-    successRedirect: '/main',
-    failureRedirect: '/login-error',
-    passReqToCallback: true,
-  })
-} */
-
 // REGISTRO
 async function registrarNuevoUsuario(req, res) {
   const registerData = { email: req.body.registerEmail, password: req.body.registerPassword }

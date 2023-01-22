@@ -44,4 +44,11 @@ module.exports = class Productos {
       console.log('Error actualizar: ', e)
     }
   }
+
+  static returnSingleton() {
+    if (!this.instance) {
+      this.instance = new Productos()
+    }
+    return this.instance
+  }
 }

@@ -1,8 +1,9 @@
-const Productos = require('../persistence/DAOs/Productos.js')
+const MyConnectionFactory = require('../persistence/DAOs/DaoFactory.js')
 const io = require('../server.js')
 const serviceLoggerPino = require('../services/LoggerPino.js')
 
-const productos = new Productos()
+const connection = new MyConnectionFactory()
+const productos = connection.returnDBConnection()
 
 async function listarProductos(req, res) {
   res.json(await productos.getAll())
